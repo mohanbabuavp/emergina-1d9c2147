@@ -1,24 +1,155 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Shield, Megaphone, ScanEye, Sparkles, CheckCircle2 } from "lucide-react";
+import { ThreeHero } from "@/components/three-hero";
+import marketingImg from "@/assets/service-marketing.jpg";
+import impersonationImg from "@/assets/service-impersonation.jpg";
+import antipiracyImg from "@/assets/service-antipiracy.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Emergina — Digital Marketing, Impersonation Removal & Anti-Piracy" },
+      { name: "description", content: "Grow, protect and defend your brand online. Emergina delivers digital marketing, impersonation removal, and anti-piracy takedowns from Erode, Tamil Nadu." },
+      { property: "og:title", content: "Emergina — Protect. Promote. Prevail." },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      {/* HERO */}
+      <section className="relative overflow-hidden min-h-[92vh] flex items-center">
+        <div className="absolute inset-0 grid-bg opacity-30" aria-hidden />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-radial)" }} aria-hidden />
+        <ThreeHero />
+        <div className="relative mx-auto max-w-7xl px-6 py-24 grid gap-12 lg:grid-cols-2 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-4 py-1.5 text-xs text-muted-foreground">
+              <Sparkles size={12} className="text-primary" /> Trusted brand protection since day one
+            </div>
+            <h1 className="mt-6 text-5xl md:text-7xl font-bold leading-[1.05]">
+              Protect. <span className="text-gradient">Promote.</span><br /> Prevail online.
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground max-w-xl">
+              Emergina combines aggressive digital marketing with impersonation removal and anti-piracy takedowns — so your brand grows without losing revenue to fakes and pirates.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-medium text-primary-foreground glow hover:opacity-90 transition">
+                Start a project <ArrowRight size={16} />
+              </Link>
+              <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 backdrop-blur px-6 py-3 text-sm font-medium hover:border-primary transition">
+                Explore services
+              </Link>
+            </div>
+            <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
+              {[
+                { k: "10K+", v: "Takedowns" },
+                { k: "250+", v: "Brands" },
+                { k: "24/7", v: "Monitoring" },
+              ].map((s) => (
+                <div key={s.v}>
+                  <div className="text-2xl md:text-3xl font-bold text-gradient">{s.k}</div>
+                  <div className="text-xs text-muted-foreground mt-1">{s.v}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative hidden lg:block h-[520px]" />
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="relative py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <div>
+              <p className="text-sm text-primary font-medium uppercase tracking-widest">What we do</p>
+              <h2 className="mt-2 text-4xl md:text-5xl font-bold max-w-2xl">Three services. One mission — your brand wins.</h2>
+            </div>
+            <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1">All services <ArrowRight size={14} /></Link>
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {[
+              { icon: Megaphone, img: marketingImg, title: "Digital Marketing", body: "Performance ads, SEO, content and social — engineered to convert." },
+              { icon: ScanEye, img: impersonationImg, title: "Impersonation Removal", body: "We hunt down fake profiles and get them removed across every platform." },
+              { icon: Shield, img: antipiracyImg, title: "Anti-Piracy Takedowns", body: "DMCA and platform takedowns for pirated films, courses, music, and IP." },
+            ].map(({ icon: Icon, img, title, body }) => (
+              <div key={title} className="group relative overflow-hidden rounded-3xl border border-border bg-card/60 backdrop-blur transition hover:border-primary/60 hover:-translate-y-1">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={img} alt={title} loading="lazy" width={1200} height={900} className="w-full h-full object-cover transition duration-700 group-hover:scale-110" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-xl bg-gradient-brand flex items-center justify-center glow"><Icon size={18} className="text-primary-foreground" /></div>
+                    <h3 className="text-xl font-semibold">{title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm text-muted-foreground">{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="relative py-24 border-t border-border">
+        <div className="mx-auto max-w-7xl px-6 grid gap-16 lg:grid-cols-2 items-center">
+          <div>
+            <p className="text-sm text-primary font-medium uppercase tracking-widest">How we work</p>
+            <h2 className="mt-2 text-4xl md:text-5xl font-bold">A relentless system built for creators & brands.</h2>
+            <p className="mt-6 text-muted-foreground">From daily monitoring to weekly campaign optimisation, our team runs a tight operating system so nothing slips through.</p>
+            <ul className="mt-8 space-y-4">
+              {[
+                "Deep audit of your brand footprint & piracy exposure",
+                "24/7 detection with human + automated review",
+                "Fast takedowns across Google, Meta, YouTube, Telegram & more",
+                "Growth playbook: ads, SEO, content, community",
+              ].map((t) => (
+                <li key={t} className="flex gap-3 text-sm"><CheckCircle2 size={18} className="text-accent shrink-0 mt-0.5" /> {t}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-6 bg-gradient-brand opacity-20 blur-3xl rounded-full" aria-hidden />
+            <div className="relative rounded-3xl border border-border bg-card/60 backdrop-blur p-8 space-y-6">
+              {[
+                { n: "01", t: "Discover", d: "We map your assets, keywords, and infringement surface." },
+                { n: "02", t: "Deploy", d: "Campaigns go live. Monitoring goes 24/7." },
+                { n: "03", t: "Defend", d: "We remove fakes, pirates and copies at scale." },
+                { n: "04", t: "Report", d: "Weekly transparent dashboards & wins." },
+              ].map((s) => (
+                <div key={s.n} className="flex gap-4">
+                  <div className="text-2xl font-bold text-gradient w-12">{s.n}</div>
+                  <div>
+                    <div className="font-semibold">{s.t}</div>
+                    <div className="text-sm text-muted-foreground">{s.d}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card/60 backdrop-blur p-12 md:p-16 text-center">
+            <div className="absolute inset-0" style={{ background: "var(--gradient-radial)" }} aria-hidden />
+            <div className="relative">
+              <h2 className="text-4xl md:text-6xl font-bold">Ready to own your <span className="text-gradient">digital space?</span></h2>
+              <p className="mt-5 text-muted-foreground max-w-xl mx-auto">Book a free 20-minute discovery call. We'll audit your brand's exposure and show you exactly where the leaks are.</p>
+              <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-brand px-8 py-4 text-base font-medium text-primary-foreground glow hover:opacity-90 transition">
+                Book discovery call <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
