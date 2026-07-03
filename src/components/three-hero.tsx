@@ -24,8 +24,8 @@ export function ThreeHero() {
     const particleCount = 1200;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
-    const colorA = new THREE.Color("#d946ef");
-    const colorB = new THREE.Color("#22d3ee");
+    const colorA = new THREE.Color("#ffffff");
+    const colorB = new THREE.Color("#888888");
     for (let i = 0; i < particleCount; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 12;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 8;
@@ -42,13 +42,13 @@ export function ThreeHero() {
 
     // Wireframe icosahedron core
     const coreGeo = new THREE.IcosahedronGeometry(1.4, 1);
-    const coreMat = new THREE.MeshBasicMaterial({ color: 0xd946ef, wireframe: true, transparent: true, opacity: 0.6 });
+    const coreMat = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.35 });
     const core = new THREE.Mesh(coreGeo, coreMat);
     scene.add(core);
 
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(2.2, 0.015, 16, 128),
-      new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.7 })
+      new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.5 })
     );
     ring.rotation.x = Math.PI / 2.2;
     scene.add(ring);

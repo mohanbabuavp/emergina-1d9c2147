@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Facebook, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Linkedin, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export function SiteFooter() {
@@ -16,11 +16,10 @@ export function SiteFooter() {
           </p>
           <div className="mt-6 flex gap-3">
             {[
-              { Icon: Instagram, href: "https://instagram.com" },
-              { Icon: Linkedin, href: "https://linkedin.com" },
-              { Icon: Facebook, href: "https://facebook.com" },
-              { Icon: Twitter, href: "https://twitter.com" },
-              { Icon: Youtube, href: "https://youtube.com" },
+              { Icon: Instagram, href: "https://www.instagram.com/_emergina/" },
+              { Icon: Facebook, href: "https://www.facebook.com/emergina1" },
+              { Icon: Youtube, href: "https://www.youtube.com/@Emergina" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/company/emergina/" },
             ].map(({ Icon, href }, i) => (
               <a key={i} href={href} target="_blank" rel="noreferrer" className="h-10 w-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition">
                 <Icon size={16} />
