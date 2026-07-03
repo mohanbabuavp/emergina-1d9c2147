@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Megaphone, ScanEye, Shield, Search, TrendingUp, Users, FileWarning, Ban, Radar, Youtube, Film, Music } from "lucide-react";
+import { ArrowRight, Megaphone, ScanEye, Shield, FileWarning, Ban, Radar, Youtube, Film, Music, Palette, Mail, Vote, MonitorSmartphone } from "lucide-react";
 import marketingImg from "@/assets/service-marketing.jpg";
 import impersonationImg from "@/assets/service-impersonation.jpg";
 import antipiracyImg from "@/assets/service-antipiracy.jpg";
@@ -20,15 +20,16 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
-    id: "digital-marketing",
+    id: "marketing",
     icon: Megaphone,
     img: marketingImg,
-    title: "Digital Marketing",
-    intro: "Growth engineered. From performance ads to organic SEO, we build funnels that convert scrollers into customers.",
+    title: "Marketing",
+    intro: "One team for every campaign — from brand identity to digital ads, direct-mail drops and full-scale political outreach.",
     features: [
-      { icon: TrendingUp, t: "Performance Ads", d: "Meta, Google, YouTube — ROAS-obsessed." },
-      { icon: Search, t: "SEO & Content", d: "Rank for keywords that actually sell." },
-      { icon: Users, t: "Social & Community", d: "Daily content ops for real audience growth." },
+      { icon: Palette, t: "Branding", d: "Identity, positioning and creative systems that stand out." },
+      { icon: MonitorSmartphone, t: "Digital Marketing", d: "Meta, Google, YouTube ads plus SEO and content." },
+      { icon: Mail, t: "Postal Marketing", d: "Targeted direct-mail campaigns with measurable reach." },
+      { icon: Vote, t: "Political Campaigns", d: "End-to-end campaign strategy, media and ground game." },
     ],
   },
   {
@@ -74,7 +75,7 @@ function Services() {
           <div className={`mx-auto max-w-7xl px-6 grid gap-14 lg:grid-cols-2 items-center ${i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""}`}>
             <div className="relative">
               <div className="absolute -inset-6 bg-gradient-brand opacity-20 blur-3xl rounded-full" aria-hidden />
-              <img src={s.img} alt={s.title} width={1200} height={900} loading="lazy" className="relative rounded-3xl border border-border w-full h-auto" />
+              <img src={s.img} alt={s.title} width={1200} height={900} loading="lazy" className="relative rounded-3xl border border-border w-full h-auto grayscale contrast-125" />
             </div>
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-1.5 text-xs text-muted-foreground">
