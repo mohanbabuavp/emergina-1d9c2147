@@ -42,11 +42,12 @@ export function SiteFooter() {
             <li className="flex gap-2"><Phone size={14} className="mt-1" /><a href="tel:+918344647098" className="hover:text-foreground">+91 83446 47098</a></li>
             <li className="flex gap-2"><Mail size={14} className="mt-1" /><a href="mailto:mb@emergina.in" className="hover:text-foreground">mb@emergina.in</a></li>
             <li className="flex gap-2"><MapPin size={14} className="mt-1" /><span>Avalpoondurai, Erode, TN 638115</span></li>
+            <li className="flex gap-2"><MapPin size={14} className="mt-1 opacity-0" /><span className="text-xs">GSTIN 33DEBPM4017M1ZK</span></li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Emergina. All rights reserved. · GSTIN 33DEBPM4017M1ZK
+        © {new Date().getFullYear()} Emergina. All rights reserved.
       </div>
     </footer>
   );
