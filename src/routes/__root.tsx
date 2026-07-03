@@ -82,11 +82,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Emergina — Digital Marketing, Impersonation Removal & Anti-Piracy" },
       { name: "description", content: "Emergina helps creators and brands grow with digital marketing, impersonation removal, and anti-piracy content takedown services." },
       { name: "author", content: "Emergina" },
-      { property: "og:title", content: "Emergina — Protect. Promote. Prevail." },
-      { property: "og:description", content: "Digital marketing, impersonation removal, and anti-piracy takedowns for creators and brands." },
+      { property: "og:title", content: "Emergina — Digital Marketing, Impersonation Removal & Anti-Piracy" },
+      { property: "og:description", content: "Emergina helps creators and brands grow with digital marketing, impersonation removal, and anti-piracy content takedown services." },
       { property: "og:site_name", content: "Emergina" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Emergina — Digital Marketing, Impersonation Removal & Anti-Piracy" },
+      { name: "twitter:description", content: "Emergina helps creators and brands grow with digital marketing, impersonation removal, and anti-piracy content takedown services." },
     ],
     links: [
       {
