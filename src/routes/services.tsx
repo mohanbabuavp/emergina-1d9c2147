@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Megaphone, ScanEye, Shield, Search, TrendingUp, Users, FileWarning, Ban, Radar, Youtube, Film, Music } from "lucide-react";
+import { ArrowRight, Megaphone, ScanEye, Shield, FileWarning, Ban, Radar, Youtube, Film, Music, Palette, Mail, Vote, MonitorSmartphone } from "lucide-react";
 import marketingImg from "@/assets/service-marketing.jpg";
 import impersonationImg from "@/assets/service-impersonation.jpg";
 import antipiracyImg from "@/assets/service-antipiracy.jpg";
@@ -20,15 +20,16 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
-    id: "digital-marketing",
+    id: "marketing",
     icon: Megaphone,
     img: marketingImg,
-    title: "Digital Marketing",
-    intro: "Growth engineered. From performance ads to organic SEO, we build funnels that convert scrollers into customers.",
+    title: "Marketing",
+    intro: "One team for every campaign — from brand identity to digital ads, direct-mail drops and full-scale political outreach.",
     features: [
-      { icon: TrendingUp, t: "Performance Ads", d: "Meta, Google, YouTube — ROAS-obsessed." },
-      { icon: Search, t: "SEO & Content", d: "Rank for keywords that actually sell." },
-      { icon: Users, t: "Social & Community", d: "Daily content ops for real audience growth." },
+      { icon: Palette, t: "Branding", d: "Identity, positioning and creative systems that stand out." },
+      { icon: MonitorSmartphone, t: "Digital Marketing", d: "Meta, Google, YouTube ads plus SEO and content." },
+      { icon: Mail, t: "Postal Marketing", d: "Targeted direct-mail campaigns with measurable reach." },
+      { icon: Vote, t: "Political Campaigns", d: "End-to-end campaign strategy, media and ground game." },
     ],
   },
   {

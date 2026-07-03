@@ -1,9 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Shield, Megaphone, ScanEye, Sparkles, CheckCircle2 } from "lucide-react";
 import { ThreeHero } from "@/components/three-hero";
-import marketingImg from "@/assets/service-marketing.jpg";
-import impersonationImg from "@/assets/service-impersonation.jpg";
-import antipiracyImg from "@/assets/service-antipiracy.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -63,31 +60,30 @@ function Index() {
       </section>
 
       {/* SERVICES */}
-      <section className="relative py-24">
+      <section className="relative py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
               <p className="text-sm text-primary font-medium uppercase tracking-widest">What we do</p>
-              <h2 className="mt-2 text-4xl md:text-5xl font-bold max-w-2xl">Three services. One mission — your brand wins.</h2>
+              <h2 className="mt-2 text-4xl md:text-5xl font-bold max-w-2xl">What we do.</h2>
+              <p className="mt-4 text-muted-foreground max-w-xl">Marketing that moves brands. Protection that defends them.</p>
             </div>
             <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1">All services <ArrowRight size={14} /></Link>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-14 grid gap-px md:grid-cols-3 bg-border rounded-3xl overflow-hidden border border-border">
             {[
-              { icon: Megaphone, img: marketingImg, title: "Digital Marketing", body: "Performance ads, SEO, content and social — engineered to convert." },
-              { icon: ScanEye, img: impersonationImg, title: "Impersonation Removal", body: "We hunt down fake profiles and get them removed across every platform." },
-              { icon: Shield, img: antipiracyImg, title: "Anti-Piracy Takedowns", body: "DMCA and platform takedowns for pirated films, courses, music, and IP." },
-            ].map(({ icon: Icon, img, title, body }) => (
-              <div key={title} className="group relative overflow-hidden rounded-3xl border border-border bg-card/60 backdrop-blur transition hover:border-primary/60 hover:-translate-y-1">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={img} alt={title} loading="lazy" width={1200} height={900} className="w-full h-full object-cover transition duration-700 group-hover:scale-110" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-xl bg-gradient-brand flex items-center justify-center glow"><Icon size={18} className="text-primary-foreground" /></div>
-                    <h3 className="text-xl font-semibold">{title}</h3>
-                  </div>
-                  <p className="mt-3 text-sm text-muted-foreground">{body}</p>
+              { icon: Megaphone, title: "Marketing", body: "Branding, digital, postal & political campaigns — built to move audiences and win attention.", tags: ["Branding", "Digital", "Postal", "Political"] },
+              { icon: ScanEye, title: "Impersonation Removal", body: "We hunt down fake profiles and get them removed across every platform.", tags: ["Instagram", "Facebook", "YouTube"] },
+              { icon: Shield, title: "Anti-Piracy Takedowns", body: "DMCA & platform takedowns for pirated films, courses, music and IP.", tags: ["DMCA", "Telegram", "Google"] },
+            ].map(({ icon: Icon, title, body, tags }) => (
+              <div key={title} className="group relative bg-background p-8 md:p-10 transition hover:bg-card">
+                <Icon size={28} strokeWidth={1.5} className="text-foreground" />
+                <h3 className="mt-8 text-2xl font-semibold">{title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{body}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {tags.map((t) => (
+                    <span key={t} className="text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-1">{t}</span>
+                  ))}
                 </div>
               </div>
             ))}
