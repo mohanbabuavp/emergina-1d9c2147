@@ -32,7 +32,7 @@ function About() {
 
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="relative rounded-3xl overflow-hidden border border-border">
-          <img src={teamImg} alt="Emergina team at work" width={1600} height={900} loading="lazy" className="w-full h-[420px] object-cover" />
+          <img src={teamImg} alt="Emergina team at work" width={1600} height={900} loading="lazy" className="w-full h-[420px] object-cover grayscale contrast-125" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
         </div>
       </section>

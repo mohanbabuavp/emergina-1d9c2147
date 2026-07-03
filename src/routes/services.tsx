@@ -75,7 +75,7 @@ function Services() {
           <div className={`mx-auto max-w-7xl px-6 grid gap-14 lg:grid-cols-2 items-center ${i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""}`}>
             <div className="relative">
               <div className="absolute -inset-6 bg-gradient-brand opacity-20 blur-3xl rounded-full" aria-hidden />
-              <img src={s.img} alt={s.title} width={1200} height={900} loading="lazy" className="relative rounded-3xl border border-border w-full h-auto" />
+              <img src={s.img} alt={s.title} width={1200} height={900} loading="lazy" className="relative rounded-3xl border border-border w-full h-auto grayscale contrast-125" />
             </div>
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-1.5 text-xs text-muted-foreground">
