@@ -98,6 +98,10 @@ function Index() {
         </div>
       </section>
 
+      <CaseStudies />
+      <Testimonials />
+      <FaqSection />
+
       {/* PROCESS */}
       <section className="relative py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-6 grid gap-16 lg:grid-cols-2 items-center">
