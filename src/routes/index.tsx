@@ -1,6 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Shield, Megaphone, ScanEye, Sparkles, CheckCircle2 } from "lucide-react";
 import { ThreeHero } from "@/components/three-hero";
+import { Counter } from "@/components/counter";
+import { Reveal } from "@/components/reveal";
+import { FaqSection } from "@/components/faq-section";
+import { Testimonials } from "@/components/testimonials";
+import { CaseStudies } from "@/components/case-studies";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -44,12 +49,14 @@ function Index() {
             </div>
             <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
               {[
-                { k: "10K+", v: "Takedowns" },
-                { k: "250+", v: "Brands" },
-                { k: "24/7", v: "Monitoring" },
+                { n: 10000, suffix: "+", v: "Takedowns" },
+                { n: 250, suffix: "+", v: "Brands" },
+                { n: 24, suffix: "/7", v: "Monitoring" },
               ].map((s) => (
                 <div key={s.v}>
-                  <div className="text-2xl md:text-3xl font-bold text-gradient">{s.k}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-gradient">
+                    <Counter to={s.n} suffix={s.suffix} />
+                  </div>
                   <div className="text-xs text-muted-foreground mt-1">{s.v}</div>
                 </div>
               ))}
