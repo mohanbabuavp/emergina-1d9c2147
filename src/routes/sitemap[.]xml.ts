@@ -19,6 +19,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/services", changefreq: "monthly", priority: "0.9" },
           { path: "/about", changefreq: "monthly", priority: "0.7" },
           { path: "/contact", changefreq: "monthly", priority: "0.7" },
+          { path: "/blog", changefreq: "weekly", priority: "0.8" },
+          { path: "/blog/spot-fake-instagram-profile", changefreq: "monthly", priority: "0.6" },
+          { path: "/blog/dmca-basics-tamil-filmmakers", changefreq: "monthly", priority: "0.6" },
+          { path: "/locations/chennai", changefreq: "monthly", priority: "0.7" },
+          { path: "/locations/coimbatore", changefreq: "monthly", priority: "0.7" },
+          { path: "/locations/erode", changefreq: "monthly", priority: "0.7" },
         ];
         const urls = entries.map((e) =>
           `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`
