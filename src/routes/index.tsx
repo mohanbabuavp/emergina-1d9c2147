@@ -103,7 +103,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 grid gap-16 lg:grid-cols-2 items-center">
           <div>
             <p className="text-sm text-primary font-medium uppercase tracking-widest">How we work</p>
-            <h2 className="mt-2 text-4xl md:text-5xl font-bold">A relentless system built for creators & brands.</h2>
+            <h2 className="mt-2 text-4xl md:text-5xl font-bold">A relentless system built for creators &amp; brands.</h2>
             <p className="mt-6 text-muted-foreground">From daily monitoring to weekly campaign optimisation, our team runs a tight operating system so nothing slips through.</p>
             <ul className="mt-8 space-y-4">
               {[
