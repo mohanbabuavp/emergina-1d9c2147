@@ -34,6 +34,10 @@ export function SiteFooter() {
             <li><Link to="/services" className="hover:text-foreground">Services</Link></li>
             <li><Link to="/about" className="hover:text-foreground">About</Link></li>
             <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
+            <li><Link to="/blog" className="hover:text-foreground">Blog</Link></li>
+            <li><Link to="/locations/$city" params={{ city: "chennai" }} className="hover:text-foreground">Chennai</Link></li>
+            <li><Link to="/locations/$city" params={{ city: "coimbatore" }} className="hover:text-foreground">Coimbatore</Link></li>
+            <li><Link to="/locations/$city" params={{ city: "erode" }} className="hover:text-foreground">Erode</Link></li>
           </ul>
         </div>
         <div>
