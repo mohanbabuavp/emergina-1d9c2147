@@ -108,7 +108,28 @@ add_action( 'customize_register', 'emergina_customize_register' );
  * Helper: get a customizer field with default.
  */
 function emergina_opt( $key, $default = '' ) {
-	return get_theme_mod( $key, $default );
+	$defaults = array(
+		'emergina_phone'         => '+91 83446 47098',
+		'emergina_email'         => 'mb@emergina.in',
+		'emergina_address'       => '34/1, Poovandivalasu, Avalpoondurai, Erode, Tamil Nadu 638115',
+		'emergina_gstin'         => '33DEBPM4017M1ZK',
+		'emergina_whatsapp'      => '918344647098',
+		'emergina_map_url'       => 'https://g.page/r/CcuLglS_spyJEAE/',
+		'emergina_map_embed'     => 'https://www.google.com/maps?q=Avalpoondurai,Erode&output=embed',
+		'emergina_ig'            => 'https://www.instagram.com/_emergina/',
+		'emergina_fb'            => 'https://www.facebook.com/emergina1',
+		'emergina_yt'            => 'https://www.youtube.com/@Emergina',
+		'emergina_li'            => 'https://www.linkedin.com/company/emergina/',
+		'emergina_hero_title'    => 'Protect. <span class="text-gradient">Promote.</span><br> Prevail online.',
+		'emergina_hero_subtitle' => 'Emergina combines aggressive digital marketing with impersonation removal and anti-piracy takedowns — so your brand grows without losing revenue to fakes and pirates.',
+	);
+	$fallback = ( '' === $default && isset( $defaults[ $key ] ) ) ? $defaults[ $key ] : $default;
+	$value    = get_theme_mod( $key, $fallback );
+	// If the customizer stored an empty string, fall back to the hardcoded default.
+	if ( '' === $value || null === $value ) {
+		$value = $fallback;
+	}
+	return $value;
 }
 
 /**
